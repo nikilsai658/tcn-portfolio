@@ -33,11 +33,12 @@ import odCatering from '../assets/od-catering.jpg'
 import odDecoration from '../assets/od-decoration.jpg'
 import odPandit from '../assets/od-pandit.jpg'
 import odDj from '../assets/od-dj.jpg'
+import dsrLogo from '../assets/dsr-logo.png'
 
 export const company = {
   name: 'Technex Cloud Networks Pvt Ltd',
   shortName: 'TechNex',
-  tagline: 'Websites, Mobile Apps & Web Portals, Built for Real Businesses',
+  tagline: 'Web Development & Digital Marketing That Grow Real Businesses',
   summary:
     'Based in Hyderabad, TechNex Cloud Networks is an integrated partner for digital growth and technical expertise. We deliver custom software development, strategic IT consultancy, digital marketing and industry-focused EdTech programs, helping businesses build, scale and grow in the digital age.',
   email: 'tcncontactinfo@gmail.com',
@@ -209,3 +210,24 @@ export const projects = [
     accent: '#3aa0ff',
   },
 ]
+
+// digital marketing work, as listed on technexcloudnetworks.in/digitalmarketing
+export const marketing = {
+  services: ['SEO', 'Meta Ads', 'Performance Marketing', 'Social Media Marketing', 'Content Creation', 'Graphic Designing'],
+  results: [
+    { value: '+287%', label: 'Avg. traffic growth' },
+    { value: '+194%', label: 'Avg. lead volume increase' },
+    { value: '-43%', label: 'Avg. cost per lead' },
+  ],
+  clients: [
+    { id: 'AL', name: 'Adding Life', category: 'Healthcare', result: '340%', metric: 'more organic traffic', work: ['SEO', 'Content'] },
+    { id: 'NW', name: 'NextWash', category: 'Laundry app', result: '180%', metric: 'more app downloads', work: ['Meta Ads', 'Social media'], logo: nextwash, logoBg: '#0057e7' },
+    { id: 'DSR', name: 'DSR EV Mobility', category: 'Electric vehicles', result: '99%', metric: 'vehicle campaign success', work: ['Social media', 'Graphic design'], logo: dsrLogo, logoBg: '#ffffff' },
+  ],
+  process: [
+    { title: 'Discovery & audit', text: 'A deep dive into your digital presence, competitors and market to set a baseline.' },
+    { title: 'Strategy blueprint', text: 'A 90-day growth roadmap with KPIs, channel mix, budget and messaging.' },
+    { title: 'Execution & optimisation', text: 'Fast launch, then weekly testing and tuning across every active channel.' },
+    { title: 'Reporting & scaling', text: 'Monthly reviews with live dashboards, and plans to scale what works.' },
+  ],
+}

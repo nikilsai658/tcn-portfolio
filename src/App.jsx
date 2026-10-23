@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react'
 import logo from './assets/logo.png'
-import { company, stats, services, projects } from './data/company'
+import { company, stats, services, projects, marketing } from './data/company'
 import { PinIcon, MailIcon, PhoneIcon, GlobeIcon, LinkedInIcon, InstagramIcon, FacebookIcon } from './components/Icons'
 import { Carousel } from './components/Carousel'
 import { Lightbox } from './components/Lightbox'
@@ -27,6 +27,7 @@ const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
   { href: '#projects', label: 'Projects' },
+  { href: '#marketing', label: 'Marketing' },
   { href: '#contact', label: 'Contact' },
 ]
 
@@ -61,7 +62,7 @@ function Hero() {
         <div>
           <h1>{company.tagline}</h1>
           <p className="lead">
-            From coworking and event-booking websites to a laundry app and a learning portal, we build with React, Angular, Flutter and .NET in Madhapur, Hyderabad.
+            We build websites, mobile apps and web portals with React, Angular, Flutter and .NET, then bring them customers through SEO, social media and performance marketing. One team in Madhapur, Hyderabad, from launch to growth.
           </p>
           <div className="hero-actions">
             <a className="btn primary" href="#projects">View our work</a>
@@ -221,6 +222,73 @@ function Projects() {
   )
 }
 
+function Marketing() {
+  return (
+    <section id="marketing" className="section alt">
+      <div className="container">
+        <p className="eyebrow">Digital marketing</p>
+        <h2>Brands we've grown</h2>
+        <p className="section-lead">
+          SEO, Meta Ads, social media and content campaigns run by the TechNex marketing team, measured on traffic, leads and return on ad spend.
+        </p>
+        <ul className="tags mk-services">
+          {marketing.services.map((s) => <li key={s}>{s}</li>)}
+        </ul>
+
+        <div className="mk-clients">
+          {marketing.clients.map((c) => (
+            <article key={c.name} className="mk-client">
+              <div className="mk-client-head">
+                <div className="logo-badge" style={{ background: c.logoBg ?? 'var(--bg)' }}>
+                  {c.logo ? <img src={c.logo} alt={`${c.name} logo`} /> : <span className="initials">{c.id}</span>}
+                </div>
+                <div>
+                  <h3>{c.name}</h3>
+                  <span className="mk-category">{c.category}</span>
+                </div>
+              </div>
+              <div className="mk-result">
+                <span className="mk-label">Key result</span>
+                <strong>↑ {c.result}</strong>
+                <p>{c.metric}</p>
+              </div>
+              <div className="mk-client-foot">
+                <span className="mk-label">Services</span>
+                <ul className="tags">
+                  {c.work.map((w) => <li key={w}>{w}</li>)}
+                </ul>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mk-bottom">
+          <div className="mk-results">
+            <p className="facts-title">Average client results</p>
+            {marketing.results.map((r) => (
+              <div key={r.label} className="mk-stat">
+                <strong>{r.value}</strong>
+                <span>{r.label}</span>
+              </div>
+            ))}
+          </div>
+          <ol className="mk-process">
+            {marketing.process.map((p, i) => (
+              <li key={p.title}>
+                <span className="num">0{i + 1}</span>
+                <div>
+                  <h3>{p.title}</h3>
+                  <p>{p.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Contact() {
   const { address } = company
   return (
@@ -297,6 +365,7 @@ export default function App() {
         <About />
         <Services />
         <Projects />
+        <Marketing />
         <Contact />
       </main>
       <Footer />
